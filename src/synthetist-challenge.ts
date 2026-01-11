@@ -6,7 +6,7 @@ interface User {
 
 const users: User[] = [
     { id: 1482, userName: "maurocpc", isAdmin: true },
-    { id: 9452, userName: "anactc", isAdmin: true }
+    { id: 9452, userName: "anactc", isAdmin: false }
 ];
 
 console.log(users[0]);
@@ -29,3 +29,13 @@ const accessCheck = (user: User): string => {
 
 accessCheck(users[0]!);
 accessCheck(users[1]!);
+
+/*
+Use a .filter() to create a new array containing only the users who have isAdmin: true.
+Log it to see if it correctly excluded any non-admins.
+*/
+const onlyAdmin = users.filter((user) => {
+    return user.isAdmin;
+})
+
+console.log(onlyAdmin);
